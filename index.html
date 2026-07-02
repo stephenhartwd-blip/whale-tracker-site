@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Whale Tracker &#8212; Live Whale Sightings Map &amp; Real-Time Alerts</title>
+<meta name="description" content="See whales & sharks near you &#8212; in real time. Whale Tracker is a live map of verified whale sightings worldwide with instant alerts. Orcas, humpbacks, blue whales, great white sharks & more. Free on the App Store.">
+<link rel="canonical" href="https://stephenhartwd-blip.github.io/whale-tracker-site/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Whale Tracker &#8212; Live Whale Sightings Map & Real-Time Alerts">
+<meta property="og:description" content="A live map of verified whale & shark sightings near you, with real-time alerts. Built for whale-watch trips, cruises & ocean lovers worldwide.">
+<meta property="og:url" content="https://stephenhartwd-blip.github.io/whale-tracker-site/">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Whale Tracker - Sightings Map",
+  "operatingSystem": "iOS",
+  "applicationCategory": "TravelApplication",
+  "description": "Live map of verified whale and shark sightings worldwide with real-time alerts when whales are near you.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "url": "https://apps.apple.com/app/id6751474710"
+}
+</script>
+<style>
+  :root{
+    --deep:#06121f; --deep2:#0a1e33; --card:#0e2740; --line:#1b3a5c;
+    --text:#eaf4ff; --muted:#9dbbd8; --accent:#39c2ff; --accent2:#7fe3c3;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--deep);color:var(--text);line-height:1.6}
+  a{color:var(--accent);text-decoration:none}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 22px}
+  header{padding:18px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(6,18,31,.92);backdrop-filter:blur(8px);z-index:10}
+  .nav{display:flex;align-items:center;justify-content:space-between}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.15rem;color:var(--text)}
+  .logo span.badge{background:linear-gradient(135deg,#1273b8,#0a4c86);border-radius:10px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+  .nav a.cta{background:var(--accent);color:#03121f;font-weight:600;padding:9px 18px;border-radius:999px}
+  .hero{padding:84px 0 64px;text-align:center;background:
+    radial-gradient(1200px 500px at 50% -10%, #10395e 0%, transparent 60%),
+    linear-gradient(180deg,var(--deep2),var(--deep))}
+  .hero h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1.15;letter-spacing:-.02em}
+  .hero h1 em{font-style:normal;color:var(--accent)}
+  .hero p.sub{margin:18px auto 0;max-width:640px;color:var(--muted);font-size:1.15rem}
+  .store-btn{display:inline-flex;align-items:center;gap:10px;margin-top:30px;background:#fff;color:#000;font-weight:600;padding:13px 26px;border-radius:14px;font-size:1.05rem;box-shadow:0 8px 30px rgba(57,194,255,.25)}
+  .store-btn small{display:block;font-weight:400;font-size:.7rem;text-align:left;color:#444}
+  .hero .note{margin-top:14px;color:var(--muted);font-size:.85rem}
+  .pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:34px}
+  .pills span{border:1px solid var(--line);background:var(--card);color:var(--muted);border-radius:999px;padding:6px 14px;font-size:.85rem}
+  section{padding:70px 0}
+  h2{font-size:1.9rem;letter-spacing:-.01em;margin-bottom:8px}
+  .lead{color:var(--muted);max-width:660px;margin-bottom:36px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+  .card .ico{font-size:1.6rem}
+  .card h3{margin:10px 0 6px;font-size:1.05rem}
+  .card p{color:var(--muted);font-size:.95rem}
+  .species{display:flex;flex-wrap:wrap;gap:10px}
+  .species div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;font-size:.95rem}
+  .regions p{color:var(--muted)}
+  .how ol{margin-left:20px;color:var(--muted)}
+  .how li{margin-bottom:12px}
+  .how li strong{color:var(--text)}
+  .faq details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+  .faq summary{cursor:pointer;font-weight:600}
+  .faq p{color:var(--muted);margin-top:10px;font-size:.95rem}
+  .final{Text-align:center;background:linear-gradient(180deg,var(--deep),var(--deep2));text-align:center}
+  footer{border-top:1px solid var(--line);padding:34px 0;color:var(--muted);font-size:.85rem}
+  .foot{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="logo"><span class="badge">&#128011;</span> Whale Tracker</div>
+    <a class="cta" href="https://apps.apple.com/app/id6751474710">Get the App</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>They breached.<br><em>You weren't there.</em></h1>
+    <p class="sub">Whale Tracker turns every coastline into a <strong>live map of verified whale &amp; shark sightings</strong> &#8212; with real-time alerts the moment something surfaces near you.</p>
+    <a class="store-btn" href="https://apps.apple.com/app/id6751474710">
+       <small>Download on the</small> App Store
+    </a>
+    <p class="note">Free to download &#183; iPhone &amp; iPad</p>
+    <div class="pills">
+      <span>&#128011; Live sightings map</span><span>&#9889; Real-time alerts</span><span>&#129416; Now tracking sharks</span><span>&#127758; Worldwide coverage</span><span>&#10003; Verified reports</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Never miss a whale again</h2>
+    <p class="lead">Reports come in from a trusted community of spotters, whale-watch captains, and researchers around the world &#8212; verified and mapped in minutes.</p>
+    <div class="grid">
+      <div class="card"><div class="ico">&#128506;&#65039;</div><h3>Live Sightings Map</h3><p>See exactly where whales and sharks were spotted near you &#8212; updated in real time, all day, every day.</p></div>
+      <div class="card"><div class="ico">&#128276;</div><h3>Real-Time Alerts</h3><p>Get an instant notification when a whale or shark is reported near your location. Grab your binoculars and go.</p></div>
+      <div class="card"><div class="ico">&#128741;&#65039;</div><h3>Built for Trips</h3><p>Planning a whale-watching tour, a cruise, or a coastal hike? Check recent activity before you pick your spot.</p></div>
+      <div class="card"><div class="ico">&#129416;</div><h3>Shark Tracking</h3><p>New: great white shark sightings alongside whales &#8212; know what's in the water before you paddle out.</p></div>
+      <div class="card"><div class="ico">&#129517;</div><h3>Migration Routes</h3><p>Follow worldwide whale migrations through the seasons and know when the giants are passing your coast.</p></div>
+      <div class="card"><div class="ico">&#10003;</div><h3>Verified Community</h3><p>Every report comes from real people &#8212; spotters, captains and researchers &#8212; not scraped guesses.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Species you can track</h2>
+    <p class="lead">From resident orca pods to migrating giants:</p>
+    <div class="species">
+      <div>&#128420; Orcas (killer whales)</div>
+      <div>&#128011; Humpback whales</div>
+      <div>&#128153; Blue whales</div>
+      <div>&#129654; Gray whales</div>
+      <div>&#128051; Sperm whales</div>
+      <div>&#127754; Fin whales</div>
+      <div>&#129416; Great white sharks</div>
+    </div>
+  </div>
+</section>
+
+<section class="regions">
+  <div class="wrap">
+    <h2>Hotspots we cover</h2>
+    <p class="lead">Whale Tracker works worldwide, with strong coverage in the places whales love:</p>
+    <p><strong>Pacific Northwest</strong> &#8212; Vancouver, Victoria, Tofino, the San Juan Islands and Puget Sound &#183; <strong>Alaska</strong> &#183; <strong>California</strong> &#8212; Monterey Bay &amp; the migration highway &#183; <strong>Hawai'i</strong> &#8212; Maui's humpback winters &#183; <strong>Australia &amp; New Zealand</strong> &#8212; the east-coast humpback run and Kaik&#333;ura's sperm whales &#183; <strong>Iceland &amp; Norway</strong> &#8212; orcas under the northern lights &#183; plus the Azores, Baja, Sri Lanka, South Africa and more.</p>
+  </div>
+</section>
+
+<section class="how">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <ol>
+      <li><strong>Open the map.</strong> Instantly see verified whale &amp; shark reports near you.</li>
+      <li><strong>Turn on alerts.</strong> We'll ping you the moment something is spotted nearby.</li>
+      <li><strong>Get out there.</strong> Time your walk, paddle, or whale-watching trip to real activity &#8212; not luck.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap">
+    <h2>Questions</h2>
+    <details><summary>Is Whale Tracker free?</summary><p>Yes &#8212; downloading and browsing recent sightings is free. Whale Tracker Pro unlocks real-time alerts, full map history and migration routes.</p></details>
+    <details><summary>Where do the sightings come from?</summary><p>From a trusted network of spotters, whale-watch operators, and research feeds worldwide &#8212; checked and de-duplicated before they hit your map. Dead or stranded animals are filtered out.</p></details>
+    <details><summary>Does it work for whale-watching tours?</summary><p>That's exactly what it's for. Check the live map before booking a tour or picking a lookout &#8212; whales spotted this morning are usually still in the area.</p></details>
+    <details><summary>Which devices does it support?</summary><p>iPhone and iPad, on the App Store today.</p></details>
+    <details><summary>Do you really track sharks now?</summary><p>Yes &#8212; great white shark sightings now appear alongside whales, so surfers and swimmers can check the water too.</p></details>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>The ocean is talking.<br>Hear it first.</h2>
+    <a class="store-btn" href="https://apps.apple.com/app/id6751474710">
+      <small>Download on the</small> App Store
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div>&#169; 2026 Stephen Hart &#183; Whale Tracker - Sightings Map</div>
+    <div>
+      <a href="https://apps.apple.com/app/id6751474710">App Store</a> &#183;
+      <a href="https://www.instagram.com/whale_tracker_app/">Instagram</a> &#183;
+      <a href="https://www.facebook.com/profile.php?id=61580332116862">Facebook</a> &#183;
+      <a href="https://sites.google.com/view/orca-spotter-privacy-policy/home">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
